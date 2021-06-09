@@ -20,16 +20,12 @@ function calculate($numberX, $numberY)
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $numberX = (int)$_POST['numberX'];
     $numberY = (int)$_POST['numberY'];
-}
-
-try {
     if ($numberY == 0 || $numberX == 0 && $numberY == 0) {
-        throw new Exception("by zero");
+        echo "by zero";
     } else {
-
         calculate($numberX, $numberY);
-
     }
-} catch (Exception $e) {
-    echo $e->getMessage();
 }
+
+
+
